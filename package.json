@@ -1,19 +1,18 @@
 {
+  "name": "rxo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "db": "json-server -p 5007 -w users.json",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "express": "^5.1.0",
     "express-session": "^1.18.1",
     "json-server": "^1.0.0-beta.3"
-  },
-  "scripts": {
-    "db": "json-server -p 5007 -w users.json",
-    "start": "node server.js"
-  },
-  "name": "rxo",
-  "version": "1.0.0",
-  "main": "script.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  }
 }
