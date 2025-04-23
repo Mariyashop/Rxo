@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل ادمین</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script src="https://kit.fontawesome.com/4a4d988ce9.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900">
+
+
+
+    <!-- فرم ورود ادمین -->
+    <section id="adminLoginSection" class="bg-gray-50 dark:bg-gray-900">
+        <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+            <a href="/index.html" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+                <img class="w-32 mr-2" src="https://yt3.googleusercontent.com/fVFrfFds5nFiY7ESdi5hFcgLRkgppaRK8Pab1EZpQrD9Fx13r224gpY8dQAVlt9j59sxwYgG-Q=s900-c-k-c0x00ffffff-no-rj" alt="logo">
+            </a>
+            <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                    <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                        ورود ادمین
+                    </h1>
+                    <form class="space-y-4 md:space-y-6" id="adminLoginForm">
+                        <div>
+                            <label for="adminUsername" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">نام کاربری</label>
+                            <input type="text" name="adminUsername" id="adminUsername" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="نام کاربری ادمین" required>
+                        </div>
+                        <div>
+                            <label for="adminPassword" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">رمز عبور</label>
+                            <input type="password" name="adminPassword" id="adminPassword" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                        </div>
+                        <button type="submit" class="w-full text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">ورود</button>
+                        <p id="adminErrorMessage" class="text-red-600 hidden"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- جدول کاربران -->
+    <section id="adminPanelSection" class="hidden bg-gray-50 dark:bg-gray-900 py-8">
+        <div class="container mx-auto px-6">
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">مدیریت کاربران</h1>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                    <thead class="bg-gray-50 dark:bg-gray-700">
+                        <tr>
+                            <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">نام کاربری</th>
+                            <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">رمز عبور (هش‌شده)</th>
+                            <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">اعتبار (تومان)</th>
+                            <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTable" class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+                        <!-- داده‌ها با جاوااسکریپت پر می‌شوند -->
+                    </tbody>
+                </table>
+            </div>
+            <button id="adminLogoutButton" class="mt-6 text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">خروج</button>
+        </div>
+    </section>
+
+    <script>
+        const adminLoginForm = document.getElementById('adminLoginForm');
+        const adminErrorMessage = document.getElementById('adminErrorMessage');
+        const adminLoginSection = document.getElementById('adminLoginSection');
+        const adminPanelSection = document.getElementById('adminPanelSection');
+        const usersTable = document.getElementById('usersTable');
+        const adminLogoutButton = document.getElementById('adminLogoutButton');
+
+        // بررسی وضعیت ادمین
+        async function checkAdminStatus() {
+            try {
+                const response = await fetch('/api/admin/users', { credentials: 'include' });
+                if (response.ok) {
+                    adminLoginSection.classList.add('hidden');
+                    adminPanelSection.classList.remove('hidden');
+                    await displayUsers();
+                } else {
+                    adminLoginSection.classList.remove('hidden');
+                    adminPanelSection.classList.add('hidden');
+                }
+            } catch {
+                adminLoginSection.classList.remove('hidden');
+                adminPanelSection.classList.add('hidden');
+            }
+        }
+
+        // نمایش لیست کاربران
+        async function displayUsers() {
+            try {
+                const response = await fetch('/api/admin/users', { credentials: 'include' });
+                if (!response.ok) throw new Error('خطا در دریافت کاربران');
+                const users = await response.json();
+                usersTable.innerHTML = '';
+                users.forEach(user => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">${user.username}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">${user.password}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">${user.balance}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">
+                            <input type="number" min="0" value="${user.balance}" class="w-24 p-1 border rounded dark:bg-gray-700 dark:text-white" id="balance-${user.username}">
+                            <button onclick="updateBalance('${user.username}')" class="ml-2 text-white bg-blue-600 hover:bg-blue-700 rounded px-2 py-1">به‌روزرسانی</button>
+                        </td>
+                    `;
+                    usersTable.appendChild(row);
+                });
+            } catch (err) {
+                adminErrorMessage.textContent = 'خطا در بارگذاری کاربران';
+                adminErrorMessage.classList.remove('hidden');
+            }
+        }
+
+        // به‌روزرسانی اعتبار کاربر
+        window.updateBalance = async (username) => {
+            const balanceInput = document.getElementById(`balance-${username}`);
+            const newBalance = parseInt(balanceInput.value);
+            if (isNaN(newBalance) || newBalance < 0) {
+                alert('لطفاً مقدار معتبر وارد کنید');
+                return;
+            }
+            try {
+                const response = await fetch('/api/admin/update-balance', {
+                    method: 'PATCH',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, balance: newBalance }),
+                    credentials: 'include'
+                });
+                if (!response.ok) throw new Error('خطا در به‌روزرسانی');
+                await displayUsers();
+                alert('اعتبار با موفقیت به‌روزرسانی شد');
+            } catch {
+                alert('خطا در به‌روزرسانی اعتبار');
+            }
+        };
+
+        // ورود ادمین
+        adminLoginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('adminUsername').value;
+            const password = document.getElementById('adminPassword').value;
+
+            try {
+                const response = await fetch('/api/admin/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password }),
+                    credentials: 'include'
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    adminErrorMessage.textContent = error.message || 'خطا در ورود';
+                    adminErrorMessage.classList.remove('hidden');
+                    return;
+                }
+
+                adminErrorMessage.classList.add('hidden');
+                adminLoginSection.classList.add('hidden');
+                adminPanelSection.classList.remove('hidden');
+                await displayUsers();
+            } catch (err) {
+                adminErrorMessage.textContent = 'خطا در ارتباط با سرور';
+                adminErrorMessage.classList.remove('hidden');
+            }
+        });
+
+        // خروج ادمین
+        adminLogoutButton.addEventListener('click', async () => {
+            try {
+                await fetch('/api/logout', { method: 'POST', credentials: 'include' });
+                adminLoginSection.classList.remove('hidden');
+                adminPanelSection.classList.add('hidden');
+            } catch {
+                adminLoginSection.classList.remove('hidden');
+                adminPanelSection.classList.add('hidden');
+            }
+        });
+
+        // بررسی اولیه وضعیت ادمین
+        checkAdminStatus();
+    </script>
+</body>
+</html>

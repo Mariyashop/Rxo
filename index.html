@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-yWTO8mvT+0GKZ+4Zywx2ZxFTHvTb8U9VZ0A7FFBdb7xQ0uLbD6JQd3U3Fj5i2Z+x9Ky6nB44UQ5T0tD+3vTzYw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <title>Mariya Shop - فروشگاه</title>
+
+  </head>
+  <body class="py-10 " >
+    <nav class="bg-white border-gray-200 dark:bg-gray-900  max-sm:hidden">
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a
+          href="/index.html"
+          class="flex items-center space-x-3 rtl:space-x-reverse"
+        >
+          <img
+            src="https://yt3.googleusercontent.com/fVFrfFds5nFiY7ESdi5hFcgLRkgppaRK8Pab1EZpQrD9Fx13r224gpY8dQAVlt9j59sxwYgG-Q=s900-c-k-c0x00ffffff-no-rj"
+            alt="Logo"
+            class="w-10 h-10 md:w-12 md:h-12 rounded-full transition-transform duration-300 hover:scale-110"
+            class="h-8"
+            alt="Mariya Rxo Logo"
+          />
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+            >Mariya Shop</span
+          >
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <a href="/userlogin.html"><button
+            type="button"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            ثبت نام
+          </button></a>
+          <button
+            data-collapse-toggle="navbar-cta"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-cta"
+            aria-expanded="false"
+          >
+            <span class="sr-only">باز کردن منو</span>
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-cta"
+        >
+          <ul
+            class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+          >
+            <li>
+              <a
+                href="/gardone.html"
+                class="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:dark:text-blue-500"
+                aria-current="page"
+                >گردونه شانس</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://t.me/MariyaRxo"
+                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >شرکت در دویل کالاف</a
+              >
+            </li>
+
+            <li>
+              <a
+                href="https://t.me/MariyaRxo"
+                target="_blank"
+                class="text-blue-600 text-3xl hover:text-blue-500 transition-colors duration-200"
+              >
+                <i class="fab fa-telegram-plane"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/MariyaRxo"
+                target="_blank"
+                class="text-red-600 text-3xl hover:text-gray-500 transition-colors duration-200"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/@MariyaRxo"
+                target="_blank"
+                class="text-red-600 text-3xl hover:text-gray-500 transition-colors duration-200"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 md:hidden">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="/index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="https://yt3.googleusercontent.com/fVFrfFds5nFiY7ESdi5hFcgLRkgppaRK8Pab1EZpQrD9Fx13r224gpY8dQAVlt9j59sxwYgG-Q=s900-c-k-c0x00ffffff-no-rj" class="h-8" alt="Flowbite Logo">
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Mariya Shop</span>
+        </a>
+        <a href="https://www.youtube.com/@MariyaRxo"><div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <button type="button" class="text-white bg-red-700 hover:bg-red-300 focus:ring-4 focus:outline-none focus:ring-tomato-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-blue-800">استریم یوتیوب</button></a>
+        </div>
+        </div>
+      </nav>
+    <div
+      class="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600 md:hidden"
+    >
+      <div class="grid h-full max-w-lg grid-cols-4 mx-auto font-medium">
+        <button
+          type="button"
+          class="inline-flex flex-col items-center justify-center px-5 border-gray-200 border-x hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600"
+        >
+          <svg
+            class="w-5 h-5 mb-2 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"
+            />
+          </svg>
+          <a href="/index.html"><span
+            class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+            >فروشگاه</span
+          ></a>
+        </button>
+        <button
+          type="button"
+          class="inline-flex flex-col items-center justify-center px-5 border-e border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600"
+        >
+        <a href="https://www.youtube.com/@MariyaRxo"><i class="fa-brands fa-youtube fa-2xl" style="color: #ff0000;"></i></a>
+        </button>
+        <button
+          type="button"
+          class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
+        >
+        <i class="fa-solid fa-dice fa-spin-pulse fa-xl" style="color:#bd0e18;"></i>
+        <br>
+          <a href="/gardone.html"><span
+            class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+            >گردونه شانس</span
+          ></a>
+        </button>
+        <button
+          type="button"
+          class="inline-flex flex-col items-center justify-center px-5 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 group border-x dark:border-gray-600"
+        >
+          <svg
+            class="w-5 h-5 mb-2 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"
+            />
+          </svg>
+          <a href="/userlogin.html"><span
+            class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+            >ثبت نام</span
+          ></a>
+        </button>
+      </div>
+    </div>
+<br>
+<div class="container mx-auto px-4 py-8 font-['Vazirmatn']">
+  <h1 class="text-3xl font-bold text-center mb-8">آخرین اخبار</h1>
+  <div class="flex overflow-x-auto space-x-6 pb-4 snap-x snap-mandatory" id="newsContainer">
+      <!-- News cards will be added here by JavaScript -->
+  </div>
+</div>
+
+<script>
+  const newsData = [
+      {
+          title: "ماریا شاپ",
+          description: "سایت ماریا شاپ افتتاح شد",
+          image: "https://yt3.googleusercontent.com/fVFrfFds5nFiY7ESdi5hFcgLRkgppaRK8Pab1EZpQrD9Fx13r224gpY8dQAVlt9j59sxwYgG-Q=s900-c-k-c0x00ffffff-no-rj",
+      },
+      {
+          title: "استریم از یوتیوب",
+          description: "هر شب ساعت نه به وقت ایران استریم از کانال یوتیوب",
+          image: "https://i.ytimg.com/vi/6EdcKusMPR4/maxresdefault.jpg"
+      },
+      {
+          title: "دویل برادران افسانه ای",
+          description: "ویدیو جدید اپلود شد از یوتیوب میتونید ببینید",
+          image: "https://i.ytimg.com/vi/5rEqYOoFRkk/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCKtSobIT_KTDKq1hK1b85mzBOgyg",
+      },
+      {
+          title: "چه کسی صاحب 5 هزار سیپی شد؟",
+          description: "این ویدیو رو از دست ندید دویل هیجان انگیز ",
+          image: "https://i.ytimg.com/vi/2fZMW1VRWug/hqdefault.jpg",
+      },
+
+  ];
+
+  const newsContainer = document.getElementById('newsContainer');
+
+  function renderNews() {
+      newsContainer.innerHTML = '';
+      newsData.forEach(news => {
+          const newsCard = document.createElement('div');
+          newsCard.className = 'bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl flex-shrink-0 w-80 snap-center';
+          newsCard.innerHTML = `
+              <img src="${news.image}" alt="${news.title}" class="w-full h-48 object-cover">
+              <div class="p-4">
+                  <h2 class="text-xl font-bold mb-2 text-gray-800">${news.title}</h2>
+                  <p class="text-gray-600 text-sm">${news.description}</p>
+              </div>
+          `;
+          newsContainer.appendChild(newsCard);
+      });
+  }
+
+  renderNews();
+</script>
+<br>
+    
+    
+<div class="container mx-auto px-4">
+  <!-- عنوان محصولات -->
+  <h1 class="text-3xl font-bold text-center text-gray-800 my-6">محصولات</h1>
+  
+  <!-- گرید محصولات -->
+  <div id="products" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+</div>
+<br><br>
+<section class="bg-white dark:bg-gray-900">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+      <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
+          <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">تیم بزرگ ماریا</h2>
+          <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">این تیم مورد تایید بزرگ ترین گیمر و پروپلیر کالاف موبایل است و همه  افراد تحت فرمان ماریا هستندو ماریا دارای کاپ قهرمنی بزرگترین مسابقات تورنمند بزرگ کالاف موبایل است.</p>
+      </div> 
+      <div class="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div class="text-center text-gray-500 dark:text-gray-400">
+              <img class="mx-auto mb-4 w-36 h-36 rounded-full" src="https://yt3.googleusercontent.com/fVFrfFds5nFiY7ESdi5hFcgLRkgppaRK8Pab1EZpQrD9Fx13r224gpY8dQAVlt9j59sxwYgG-Q=s900-c-k-c0x00ffffff-no-rj" alt="Bonnie Avatar">
+              <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  <a href="#">Mariya Rxo</a>
+              </h3>
+              <p>بنیانگزار کالاف موبایل</p>
+
+          </div>
+          <div class="text-center text-gray-500 dark:text-gray-400">
+            <img class="mx-auto mb-4 w-36 h-36 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png" alt="Joseph Avatar">
+            <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                <a href="#">علیرضا</a>
+            </h3>
+            <p>نایب رییس و معاون هلدینگ ماریا و بزرگ ترین و قوی ترین گیمر در سطح پابجی</p>
+          <div class="text-center text-gray-500 dark:text-gray-400">
+              <img class="mx-auto mb-4 w-36 h-36 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="Jese Avatar">
+              <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  <a href="#">آمون بزرگ</a>
+              </h3>
+              <p>مدیریت زیر ساخت های بزرگ ترین هلدینگ گیم دنیا زیر نظر ننه ماریا با عنوان هلدینگ ماریا</p>
+          </div>
+        </div>
+        <div class="text-center text-gray-500 dark:text-gray-400">
+            <img class="mx-auto mb-4 w-36 h-36 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/helene-engels.png" alt="Helene Avatar">
+            <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                <a href="#">اسما</a>
+            </h3>
+            <p>دور دونه ننه ماریا</p>
+
+        </div>
+
+          <div class="text-center text-gray-500 dark:text-gray-400">
+              <img class="mx-auto mb-4 w-36 h-36 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="Michael Avatar">
+              <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  <a href="#">مانی</a>
+              </h3>
+              <p>لیدر بزرگ ترین روم های کالاف تحت نظارت ماریا</p>
+          </div>
+          <div class="text-center text-gray-500 dark:text-gray-400">
+              <img class="mx-auto mb-4 w-36 h-36 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/neil-sims.png" alt="Neil Avatar">
+              <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  <a href="#">گلیچ </a>
+              </h3>
+              <p>مورد اعتماد ترین فروشنده باند بزرگ و مافیا سیپی در سطح کشوری زیر نظر ماریا</p>
+          </div>
+      </div>  
+  </div>
+  <br><br><br>  
+</section>
+<script>
+const products = [
+
+  {
+    id: 1,
+    name: "80 CP",
+    description: "80 سی پی کالاف دیوتی موبایل (CP)",
+    price: "90٬۰۰۰ تومان",
+    image: "https://mojogem.com/wp-content/uploads/2024/02/80-%D8%B3%DB%8C-%D9%BE%DB%8C-%DA%A9%D8%A7%D9%84%D8%A7%D9%81-%D8%AF%DB%8C%D9%88%D8%AA%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-CP.webp",
+    instagramLink: "https://www.instagram.com/yourpage"
+  },
+  {
+    id: 2,
+    name: "160 CP",
+    description: "160 سی پی کالاف دیوتی موبایل (CP)",
+    price: "320٬۰۰۰ تومان",
+    image: "https://mojogem.com/wp-content/uploads/2024/02/160-%D8%B3%DB%8C-%D9%BE%DB%8C-%DA%A9%D8%A7%D9%84%D8%A7%D9%81-%D8%AF%DB%8C%D9%88%D8%AA%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-CP.webp",
+    instagramLink: "https://www.instagram.com/yourpage"
+  },
+  {
+    id: 3,
+    name: "240 CP",
+    description: "240 سی پی کالاف دیوتی موبایل (CP)",
+    price: "420٬۰۰۰ تومان",
+    image: "https://mojogem.com/wp-content/uploads/2024/02/240-%D8%B3%DB%8C-%D9%BE%DB%8C-%DA%A9%D8%A7%D9%84%D8%A7%D9%81-%D8%AF%DB%8C%D9%88%D8%AA%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-CP.webp",
+    instagramLink: "https://www.instagram.com/yourpage"
+  },
+  {
+    id: 4,
+    name: "320 CP",
+    description: "320 سی پی کالاف دیوتی موبایل (CP)",
+    price: "520٬۰۰۰ تومان",
+    image: "https://mojogem.com/wp-content/uploads/2024/02/320-%D8%B3%DB%8C-%D9%BE%DB%8C-%DA%A9%D8%A7%D9%84%D8%A7%D9%81-%D8%AF%DB%8C%D9%88%D8%AA%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-CP.webp",
+    instagramLink: "https://www.instagram.com/yourpage"
+  },
+  {
+    id: 5,
+    name: "420 CP",
+    description: "420 سی پی کالاف دیوتی موبایل (CP)",
+    price: "650٬۰۰۰ تومان",
+    image: "https://mojogem.com/wp-content/uploads/2024/02/420-%D8%B3%DB%8C-%D9%BE%DB%8C-%DA%A9%D8%A7%D9%84%D8%A7%D9%81-%D8%AF%DB%8C%D9%88%D8%AA%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-CP.webp",
+    instagramLink: "https://www.instagram.com/yourpage"
+  },
+  {
+    id: 6,
+    name: "580 CP",
+    description: "580 سی پی کالاف دیوتی موبایل (CP)",
+    price: "800٬۰۰۰ تومان",
+    image: "https://mojogem.com/wp-content/uploads/2024/02/580-%D8%B3%DB%8C-%D9%BE%DB%8C-%DA%A9%D8%A7%D9%84%D8%A7%D9%81-%D8%AF%DB%8C%D9%88%D8%AA%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-CP.webp",
+    instagramLink: "https://www.instagram.com/yourpage"
+  },
+  {
+    id: 7,
+    name: "880 CP",
+    description: "880 سی پی کالاف دیوتی موبایل (CP)",
+    price: "1٬200٬۰۰۰ تومان",
+    image: "https://mojogem.com/wp-content/uploads/2024/02/880-%D8%B3%DB%8C-%D9%BE%DB%8C-%DA%A9%D8%A7%D9%84%D8%A7%D9%81-%D8%AF%DB%8C%D9%88%D8%AA%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-CP.webp",
+    instagramLink: "https://www.instagram.com/yourpage"
+  },
+  {
+    id: 8,
+    name: "2400 CP",
+    description: "2400 سی پی کالاف دیوتی موبایل (CP)",
+    price: "3٬۰۰۰٬۰۰۰ تومان",
+    image: "https://mojogem.com/wp-content/uploads/2024/02/2400-%D8%B3%DB%8C-%D9%BE%DB%8C-%DA%A9%D8%A7%D9%84%D8%A7%D9%81-%D8%AF%DB%8C%D9%88%D8%AA%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-CP.webp",
+    instagramLink: "https://www.instagram.com/yourpage"
+  },
+  // {
+  //   id: 9,
+  //   name: "5000 CP",
+  //   description: "5000 سی پی کالاف دیوتی موبایل (CP)",
+  //   price: "۴٬۰۰۰٬۰۰۰ تومان",
+  //   image: "https://mojogem.com/wp-content/uploads/2024/02/5000-%D8%B3%DB%8C-%D9%BE%DB%8C-%DA%A9%D8%A7%D9%84%D8%A7%D9%81-%D8%AF%DB%8C%D9%88%D8%AA%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-CP.webp",
+  //   instagramLink: "https://www.instagram.com/yourpage"
+  // }
+];
+const container = document.getElementById('products');
+products.forEach(product => {
+  const card = document.createElement('div');
+  card.className = 'bg-white rounded-2xl shadow-md overflow-hidden';
+
+  card.innerHTML = `
+    <img src="${product.image}" alt="${product.name}" w-full aspect-[16/9] object-cover">
+    <div class="p-4 space-y-2">
+      <h2 class="text-xl  font-serif">${product.name}</h2>
+      <p class="text-sm font-mono text-gray-600">${product.description}</p>
+      <p class="text-lg font-sans text-black-600 flex items-center gap-2">
+        <span>💰</span>${product.price}
+      </p>
+          <button onclick="window.open('${product.instagramLink}', '_blank')"
+            class="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-3 px-6 rounded-lg font-bold text-sm transition-colors duration-300">
+            خرید مستقیم
+          </button>
+    </div>
+  `;
+  container.appendChild(card);
+});
+
+</script>
+    
+  </body>
+  <script src="/script.js"></script>
+</html>
