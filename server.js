@@ -4,7 +4,8 @@ const bcrypt = require('bcrypt');
 const session = require('express-session');
 const path = require('path');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+
 
 // تنظیمات میدلور
 app.use(express.json());
@@ -177,7 +178,6 @@ app.post('/api/logout', (req, res) => {
     req.session.destroy();
     res.status(200).json({ message: 'خروج موفق' });
 });
-
 initializeUsersFile().then(() => {
     app.listen(port, () => {
         console.log(`Server running at http://localhost:${port}`);
