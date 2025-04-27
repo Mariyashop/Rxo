@@ -211,7 +211,73 @@
       <!-- News cards will be added here by JavaScript -->
   </div>
 </div>
+  <footer class="bg-gradient-to-r from-blue-600 to-orange-500 text-white py-8 mt-10">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- بخش درباره ما -->
+      <div class="space-y-4">
+        <h3 class="text-lg font-bold">Mariya Shop</h3>
+        <p class="text-sm">
+          فروشگاه ماریا، بهترین مقصد برای خرید محصولات و اکانت‌های کالاف با قیمت‌های رقابتی و پشتیبانی 24/7.
+        </p>
+      </div>
+  
+      <!-- بخش لینک‌های مفید -->
+      <div class="space-y-4">
+        <h3 class="text-lg font-bold">لینک‌های مفید</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/public/index.html" class="hover:text-orange-200 transition-colors duration-200">خانه</a></li>
+          <li><a href="/public/index.html" class="hover:text-orange-200 transition-colors duration-200">محصولات</a></li>
+          <li><a href="/public/index.html" class="hover:text-orange-200 transition-colors duration-200">آگهی‌ها</a></li>
+        </ul>
+      </div>
+  
+      <!-- بخش تماس و شبکه‌های اجتماعی -->
+      <div class="space-y-4">
+        <h3 class="text-lg font-bold">تماس با ما</h3>
+        <p class="text-sm">ایمیل: support@mariyashop.com</p>
+        <p class="text-sm">تلگرام: <a href="https://t.me/MariyaRxo" class="hover:text-orange-200 transition-colors duration-200">@YourTelegramID</a></p>
+        <div class="flex space-x-4">
+          <a href="https://t.me/MariyaRxo" target="_blank" class="text-2xl hover:text-orange-200 transition-colors duration-200">
+            <i class="fab fa-telegram-plane"></i>
+          </a>
+          <a href="https://www.instagram.com/MariyaRxo" target="_blank" class="text-2xl hover:text-orange-200 transition-colors duration-200">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/@MariyaRxo" target="_blank" class="text-2xl hover:text-orange-200 transition-colors duration-200">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- خط جداکننده -->
+    <div class="border-t border-orange-300 mt-8 pt-4">
+      <div class="container mx-auto px-4 text-center text-sm">
+        <p>&copy; 2025 Mariya Shop. تمامی حقوق محفوظ است.</p>
+      </div>
+    </div>
+  </footer>
 
+  <style>
+    footer {
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    }
+    @media (max-width: 640px) {
+      footer .grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      footer .flex {
+        justify-content: center;
+      }
+      footer h3 {
+        font-size: 1.125rem;
+      }
+      footer p, footer ul li a {
+        font-size: 0.875rem;
+      }
+    }
+  </style>
 <script>
   const newsData = [
       {
